@@ -241,7 +241,7 @@ export default function PseudoPage({ onSubmit, existingUsers, onLoginExisting, o
           </h2>
           <p className="text-gray-600 mb-6 text-center">Entrez votre code de vérification</p>
           <input
-            type="text"
+            type="number"
             value={enteredCode}
             onChange={(e) => setEnteredCode(e.target.value)}
             placeholder="Entrez votre code"
