@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, ChevronLeft, ChevronRight, Utensils, MapPin } from 'lucide-react';
+import { X, ChevronLeft, ChevronRight, Utensils, MapPin, Euro } from 'lucide-react';
 import Image from 'next/image';
 
 export default function RestaurantDetailsModal({ restaurant, onClose }) {
