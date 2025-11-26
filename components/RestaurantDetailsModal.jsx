@@ -130,7 +130,7 @@ className="w-full h-full object-cover"
                 height="100%"
                 frameBorder="0"
                 style={{ border: 0 }}
-                src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${encodeURIComponent(restaurant.address)}&zoom=15`}
+                src={`https://www.google.com/maps/embed/v1/place?key=${process.env.MAPS_API_KEY}&q=${encodeURIComponent(restaurant.address)}&zoom=15`}
                 allowFullScreen
               />
             </div>
