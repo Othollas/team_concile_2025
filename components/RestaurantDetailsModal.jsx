@@ -100,6 +100,13 @@ className="w-full h-full object-cover"
             </div>
           </div>
 
+          <div className="mb-6">
+          <h3 className="text-xl font-semibold text-gray-800 mb-3 flex items-center gap-2">
+
+          </h3>
+              
+          </div>
+
           <p className="text-gray-600 text-lg mb-6 leading-relaxed">{restaurant.description}</p>
 
           <div className="mb-6">
