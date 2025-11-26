@@ -178,7 +178,6 @@ export default function PseudoPage({ onSubmit, existingUsers, onLoginExisting, o
               <input
                 type="number"
                 value={telNumber}
-                max={10}
                 onChange={(e) => setTelNumber(e.target.value)}
                 placeholder="Entrez votre numéro de téléphone"
                 className="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:border-orange-500 focus:outline-none transition-colors mb-4 "
@@ -187,7 +186,7 @@ export default function PseudoPage({ onSubmit, existingUsers, onLoginExisting, o
               
 
               <button
-                onClick={telNumber.length < 10 ? ()=> setErrorTel(true) : handleCodeSubmit}
+                onClick={handleCodeSubmit}
                 disabled={!pseudo.trim() || !telNumber}
                 className="w-full bg-orange-500 hover:bg-orange-600 disabled:bg-gray-300 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105"
               >
