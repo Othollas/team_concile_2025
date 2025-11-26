@@ -101,7 +101,10 @@ className="w-full h-full object-cover"
           </div>
 
           <div className="mb-6">
-            <h3 className="text-xl font-semibold text-gray-800 mb-3 flex items-center gap-2"><Euro size={20} /> Prix </h3>
+            <h3 className="text-xl font-semibold text-gray-800 mb-3 flex items-center gap-2">
+              <Euro size={20} />
+              Prix
+            </h3>
             <div className="flex flex-wrap gap-2">
               {restaurant.price.map((price, index) => (
                 <span
