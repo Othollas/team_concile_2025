@@ -10,7 +10,7 @@ export default function PseudoPage({ onSubmit, existingUsers, onLoginExisting, o
   const [selectedUser, setSelectedUser] = useState(null);
   const [enteredCode, setEnteredCode] = useState('');
   const [telNumber, setTelNumber] = useState('');
-  const [errorTel, setErrorTel] = useState(false);
+  // const [errorTel, setErrorTel] = useState(false);
 
   const handleNewUser = () => setMode('new');
 
@@ -174,7 +174,7 @@ export default function PseudoPage({ onSubmit, existingUsers, onLoginExisting, o
                 onKeyPress={(e) => e.key === 'Enter' && handlePseudoSubmit()}
               />
               <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Votre Téléphone</h2>
-              {errorTel && <span className='text-red-500'>Le numéro doit etre de 10 chiffres</span>}
+              {/* {errorTel && <span className='text-red-500'>Le numéro doit etre de 10 chiffres</span>} */}
               <input
                 type="number"
                 value={telNumber}
@@ -186,7 +186,7 @@ export default function PseudoPage({ onSubmit, existingUsers, onLoginExisting, o
               
 
               <button
-                onClick={handleCodeSubmit}
+                onClick={handlePseudoSubmit}
                 disabled={!pseudo.trim() || !telNumber}
                 className="w-full bg-orange-500 hover:bg-orange-600 disabled:bg-gray-300 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105"
               >
@@ -210,7 +210,7 @@ export default function PseudoPage({ onSubmit, existingUsers, onLoginExisting, o
                 onKeyPress={(e) => e.key === 'Enter' && handleCodeSubmit()}
               />
               <button
-                onClick={handleCodeSubmit }
+                onClick={handleCodeSubmit}
                 disabled={enteredCode.length !== 4}
                 className="w-full bg-orange-500 hover:bg-orange-600 disabled:bg-gray-300 text-white font-semibold px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105"
               >
