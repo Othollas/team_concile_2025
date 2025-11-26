@@ -5,6 +5,8 @@ import Image from 'next/image';
 export default function RestaurantDetailsModal({ restaurant, onClose }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  const apiKey = process.env.NEXT_PUBLIC_MAPS_API_KEY;
+
   const nextImage = () => {
     setCurrentImageIndex((prev) => (prev + 1) % restaurant.images.length);
   };
@@ -130,7 +132,7 @@ className="w-full h-full object-cover"
                 height="100%"
                 frameBorder="0"
                 style={{ border: 0 }}
-                src={`https://www.google.com/maps/embed/v1/place?key=${process.env.MAPS_API_KEY}&q=${encodeURIComponent(restaurant.address)}&zoom=15`}
+                src={`https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${encodeURIComponent(restaurant.address)}&zoom=15`}
                 allowFullScreen
               />
             </div>

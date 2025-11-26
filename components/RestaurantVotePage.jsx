@@ -45,7 +45,7 @@ export default function RestaurantVotePage({ pseudo, participants, onVote, exist
               
               <button
                 onClick={() => setDetailsRestaurant(restaurant)}
-                className="absolute top-3 right-3 bg-white hover:bg-orange-50 rounded-full p-2 shadow-md transition-all duration-300 hover:scale-110 opacity-0 group-hover:opacity-100"
+                className="absolute top-3 right-3 bg-white hover:bg-orange-50 rounded-full p-2 shadow-md transition-all duration-300 hover:scale-110  animate-ping2 md:animate-none"
                 title="Voir les détails"
               >
                 <Info size={20} className="text-orange-500" />
