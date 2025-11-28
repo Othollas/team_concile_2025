@@ -42,11 +42,11 @@ export default function Home() {
 
   const handleNewUserSubmit = async (pseudo, code, phone) => {
     try {
-
-      await createUser(pseudo.trim(), code, phone);
+      const trimPseudo = pseudo.trim();
+      await createUser(trimPseudo, code, phone);
       
       const newUser = {
-        pseudo,
+        trimPseudo,
         code,
         phone,
         hasVoted: false,
@@ -55,7 +55,7 @@ export default function Home() {
         timestamp: new Date().toISOString()
       };
       
-      localStorage.setItem("user_pseudo", pseudo);
+      localStorage.setItem("user_pseudo", pseudo.trim());
       localStorage.setItem("user_code", code);
       setUsers([...users, newUser]);
       setCurrentUser(newUser);
@@ -68,7 +68,6 @@ export default function Home() {
 
   const handleLoginExisting = async (user) => {
     try {
-      console.log('user', user)
       const userData = await loginUser(user.pseudo, user.code);
       
       setCurrentUser({ ...user, ...userData });
