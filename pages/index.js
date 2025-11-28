@@ -42,7 +42,8 @@ export default function Home() {
 
   const handleNewUserSubmit = async (pseudo, code, phone) => {
     try {
-      await createUser(pseudo, code, phone);
+
+      await createUser(pseudo.trim(), code, phone);
       
       const newUser = {
         pseudo,

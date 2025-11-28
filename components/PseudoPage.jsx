@@ -34,8 +34,11 @@ export default function PseudoPage({ onSubmit, existingUsers, onLoginExisting, o
 
   const handlePseudoSubmit = () => {
     if (pseudo.trim()) {
-      const userExists = existingUsers.some(u => u.pseudo.toLowerCase() === pseudo.toLowerCase());
 
+      setPseudo(pseudo.trim());
+      
+      const userExists = existingUsers.some(u => u.pseudo.toLowerCase() === pseudo.toLowerCase());
+      
       if (userExists) {
         onToast('Ce pseudo existe déjà ! Connectez-vous avec votre code ou choisissez un autre pseudo.');
         return;
