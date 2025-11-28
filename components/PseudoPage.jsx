@@ -17,7 +17,9 @@ export default function PseudoPage({ onSubmit, existingUsers, onLoginExisting, o
   const handleExistingUser = async (user) => {
     setSelectedUser(user);
 
-    if (localStorage.getItem("user_pseudo") === user.pseudo) {
+    const userPseudoStorage = localStorage.getItem("user_pseudo").trim();
+
+    if (userPseudoStorage === user.pseudo) {
       try {
         await loginUser(user.pseudo, localStorage.getItem("user_code"))
         const verifiedUSer = { ...user, code: localStorage.getItem("user_code") }
@@ -36,7 +38,7 @@ export default function PseudoPage({ onSubmit, existingUsers, onLoginExisting, o
     if (pseudo.trim()) {
 
       setPseudo(pseudo.trim());
-      
+
       const userExists = existingUsers.some(u => u.pseudo.toLowerCase() === pseudo.toLowerCase());
       
       if (userExists) {
